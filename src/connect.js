@@ -25,13 +25,13 @@ export default (config = {}) => {
 
       componentWillUnmount() {
         lastUnmounts[k] = new Date()
-        states[k] = this.state
       }
 
       render() {
+        states[k] = this.state //update state when render calls
+
         const setPrisist = (obj) => {
           this.setState(obj)
-          states[k] = this.state
         }
         const props = {
           ...this.props,

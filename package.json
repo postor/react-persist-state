@@ -1,6 +1,6 @@
 {
   "name": "next-prisist-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Persisting React state between route navigation for next.js",
   "main": "dist/connect.js",
   "scripts": {
