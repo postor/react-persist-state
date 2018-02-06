@@ -16,8 +16,11 @@ export default (config = {}) => {
         this.state = defaultState
         const lastUnmount = lastUnmounts[k]
         const lastState = states[k]
-        if (lastUnmount && lastState) {
-          if (maxAge === 0 || (new Date() - lastUnmount) < maxAge) {
+        if (lastState) {
+          if (!lastUnmount) {
+            //odd in next, before unmounted
+            this.state = lastState
+          }else if (maxAge === 0 || (new Date() - lastUnmount) < maxAge) {
             this.state = lastState
           }
         }
