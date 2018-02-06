@@ -2,7 +2,7 @@
   "name": "next-prisist-state",
   "version": "1.0.0",
   "description": "Persisting React state between route navigation for next.js",
-  "main": "index.js",
+  "main": "dist/connect.js",
   "scripts": {
     "test": "next dev",
     "build": "gulp"
