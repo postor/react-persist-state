@@ -39,7 +39,7 @@ export default (config = {}) => {
          * 
          * @param {function|Object} obj function as reducer, new value to merge or set
          */
-        const setPersist = (obj, ) => {
+        const setPersist = (obj) => {
           if (isFunction(obj)) {
             this.setState(obj(this.state))
             return
