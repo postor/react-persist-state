@@ -3,14 +3,14 @@ const connect = c({
   defaultState: { test: '' }
 })
 
-const TestPrisist = ({ testProp, setPrisist, prisisted }) => {
+const TestPersist = ({ testProp, setPersist, persisted }) => {
   return (<div>
     <p>testProp:{JSON.stringify(testProp)}</p>
-    <p>prisisted.test:<input value={prisisted.test} onChange={(e) => {
-      setPrisist({ test: e.target.value })
+    <p>persisted.test:<input value={persisted.test} onChange={(e) => {
+      setPersist({ test: e.target.value })
     }} /></p>
-    <p>prisisted.test:{JSON.stringify(prisisted.test)}</p>
+    <p>persisted.test:{JSON.stringify(persisted.test)}</p>
   </div>)
 }
 
-export default connect(TestPrisist)
+export default connect(TestPersist)

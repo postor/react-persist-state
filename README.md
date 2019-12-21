@@ -1,35 +1,35 @@
-# next-prisist-state
+# next-persist-state
 Persisting React state between route navigation for next.js
 
 ## usage
 
 ```
-import prisist from 'next-prisist-state'
+import persist from 'next-persist-state'
 
-const connect = prisist({
+const connect = persist({
   defaultState: { test: '' }
 })
 
-const TestPrisist = ({ testProp, setPrisist, prisisted }) => {
+const TestPersist = ({ testProp, setPersist, persisted }) => {
   return (<div>
     <p>testProp:{JSON.stringify(testProp)}</p>
-    <p>prisisted.test:<input value={prisisted.test} onChange={(e) => {
-      setPrisist({ test: e.target.value })
+    <p>persisted.test:<input value={persisted.test} onChange={(e) => {
+      setPersist({ test: e.target.value })
     }} /></p>
-    <p>prisisted.test:{JSON.stringify(prisisted.test)}</p>
+    <p>persisted.test:{JSON.stringify(persisted.test)}</p>
   </div>)
 }
 
-export default connect(TestPrisist)
+export default connect(TestPersist)
 ```
 
-when you route, `prisisted` will keep
+when you route, `persisted` will keep
 
 ## test
 
 ```
-git clone https://github.com/postor/next-prisist-state.git
-cd next-prisist-state
+git clone https://github.com/postor/next-persist-state.git
+cd next-persist-state
 yarn && yarn test
 ```
 
@@ -37,16 +37,16 @@ open http://localhost:3000
 
 ## params
 
-prisist
+persist
 
 ```
-import prisist from 'next-prisist-state'
-const connect = prisist({
-  maxAge: 0,          //timeout(miliseconds) for unmounted prisist, 0 means no timeout
-  defaultState: {},   //default prisisted state
+import persist from 'next-persist-state'
+const connect = persist({
+  maxAge: 0,          //timeout(miliseconds) for unmounted persist, 0 means no timeout
+  defaultState: {},   //default persisted state
 })
 
-//Comp the component will need to prisist state
+//Comp the component will need to persist state
 //key default is Comp, when you use the same connect and the same Comp multiple times(e.g. list), you need to specify a key for each ofthe
 connect(Comp,key)
 ```

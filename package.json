@@ -1,5 +1,5 @@
 {
-  "name": "next-prisist-state",
+  "name": "next-persist-state",
   "version": "1.0.2",
   "description": "Persisting React state between route navigation for next.js",
   "main": "dist/connect.js",
@@ -9,21 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/postor/next-prisist-state.git"
+    "url": "git+https://github.com/postor/next-persist-state.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/postor/next-prisist-state/issues"
+    "url": "https://github.com/postor/next-persist-state/issues"
   },
-  "homepage": "https://github.com/postor/next-prisist-state#readme",
+  "homepage": "https://github.com/postor/next-persist-state#readme",
   "dependencies": {
     "next": "^5.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.5.2",

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import isFunction from 'lodash.isfunction'
 
 export default (config = {}) => {
   const {
@@ -6,44 +7,52 @@ export default (config = {}) => {
     defaultState = {}
   } = config
 
-  let states = {}, lastUnmounts = {}
+  let states = new Map(), lastUnmounts = new Map()
 
   return (Comp, key = undefined) => {
     const k = key || Comp
-    class Prisist extends Component {
+    class Persist extends Component {
       constructor(props) {
         super(props)
         this.state = defaultState
-        const lastUnmount = lastUnmounts[k]
-        const lastState = states[k]
+        const lastUnmount = lastUnmounts.get(k)
+        const lastState = states.get(k)
         if (lastState) {
           if (!lastUnmount) {
             //odd in next, before unmounted
             this.state = lastState
-          }else if (maxAge === 0 || (new Date() - lastUnmount) < maxAge) {
+          } else if (maxAge === 0 || (new Date() - lastUnmount) < maxAge) {
             this.state = lastState
           }
         }
       }
 
       componentWillUnmount() {
-        lastUnmounts[k] = new Date()
+        lastUnmounts.set(k) = new Date()
       }
 
       render() {
-        states[k] = this.state //update state when render calls
+        states.get(k) = this.state //update state when render calls
 
-        const setPrisist = (obj) => {
+        /**
+         * 
+         * @param {function|Object} obj function as reducer, new value to merge or set
+         */
+        const setPersist = (obj, ) => {
+          if (isFunction(obj)) {
+            this.setState(obj(this.state))
+            return
+          }
           this.setState(obj)
         }
         const props = {
           ...this.props,
-          setPrisist,
-          prisisted: this.state,
+          setPersist,
+          persisted: this.state,
         }
         return (<Comp {...props} />)
       }
     }
-    return Prisist
+    return Persist
   }
 }

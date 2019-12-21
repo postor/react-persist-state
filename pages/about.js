@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import TestPrisistList from '../components/TestPrisistList'
+import TestPersistList from '../components/TestPersistList'
 
 export default () => (<div>
   <p>about page</p>
-  <TestPrisistList />
+  <TestPersistList />
   <Link href="/"><a>home</a></Link>
 </div>)
