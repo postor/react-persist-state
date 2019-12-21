@@ -1,6 +1,6 @@
 import c from '../src/connect'
 const connect = c({
-  defaultState: { test: '' }
+  defaultState: { test: 'abc' }
 })
 
 const TestPersist = ({ testProp, setPersist, persisted }) => {
@@ -13,4 +13,5 @@ const TestPersist = ({ testProp, setPersist, persisted }) => {
   </div>)
 }
 
-export default connect(TestPersist)
+const TestPersist1 = connect(TestPersist)
+export default TestPersist1

@@ -8,8 +8,9 @@ export default (config = {}) => {
   } = config
 
   let states = new Map(), lastUnmounts = new Map()
+  console.log({ states, lastUnmounts })
 
-  return (Comp, key = undefined) => {
+  const connect = (Comp, key = undefined) => {
     const k = key || Comp
     class Persist extends Component {
       constructor(props) {
@@ -28,11 +29,11 @@ export default (config = {}) => {
       }
 
       componentWillUnmount() {
-        lastUnmounts.set(k) = new Date()
+        lastUnmounts.set(k, new Date())
       }
 
       render() {
-        states.get(k) = this.state //update state when render calls
+        states.set(k, this.state)  //update state when render calls
 
         /**
          * 
@@ -55,4 +56,11 @@ export default (config = {}) => {
     }
     return Persist
   }
+
+  connect.clearCache = () => {
+    states = new Map()
+    lastUnmounts = new Map()
+  }
+
+  return connect
 }

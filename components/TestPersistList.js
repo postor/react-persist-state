@@ -1,6 +1,6 @@
 import c from '../src/connect'
 const connect = c({
-  defaultState: { test: '' }
+  defaultState: { test: 'def' }
 })
 
 const InputItem = ({ testProp, setPersist, persisted }) => {
