@@ -2,3 +2,4 @@
 /.next
 /yarn.lock
 /dist
+/gulpfile.js

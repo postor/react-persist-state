@@ -1,7 +1,7 @@
 {
   "name": "react-persist-state",
-  "version": "1.0.2",
-  "description": "Persisting React state between route navigation for next.js",
+  "version": "1.0.4",
+  "description": "Persisting React state between route navigation for react SPA | 即使 SPA 页面间跳转仍能使组件保持数据",
   "main": "dist/connect.js",
   "scripts": {
     "test": "next dev",
@@ -19,14 +19,13 @@
   },
   "homepage": "https://github.com/postor/react-persist-state#readme",
   "dependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
     "lodash.isfunction": "^3.0.9",
     "next": "^9.1.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import initPersist from '../../../dist/connect'
+import initPersist from 'react-persist-state'
 import Filter from '../Filter'
 
 const connect = initPersist({

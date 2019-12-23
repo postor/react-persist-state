@@ -1,5 +1,5 @@
 # react-persist-state
-Persisting React state between route navigation for next.js | 即使 next.js 页面间跳转仍能使组件保持数据
+Persisting React state between route navigation for react SPA | 即使 SPA 页面间跳转仍能使组件保持数据
 
 ## usage | 用法
 
