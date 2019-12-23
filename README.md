@@ -48,7 +48,10 @@ const connect = persist({
   defaultState: {},   // default persisted state | 默认 state
   onUpdate: (key, Comp, newState) => {} // use this hook if you need to know each change | 数据更新的钩子
 })
+
+// data is stored in memory, if you close browser, data will lost even not reach maxAge
 ```
+
 connect 
 
 HOC that generates Components can persist | 返回能够保持状态的组件的 HOC
