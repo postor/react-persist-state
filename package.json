@@ -1,35 +1,35 @@
 {
-  "name": "next-persist-state",
+  "name": "react-persist-state",
   "version": "1.0.2",
   "description": "Persisting React state between route navigation for next.js",
   "main": "dist/connect.js",
   "scripts": {
     "test": "next dev",
-    "build": "gulp"
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/postor/next-persist-state.git"
+    "url": "git+https://github.com/postor/react-persist-state.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/postor/next-persist-state/issues"
+    "url": "https://github.com/postor/react-persist-state/issues"
   },
-  "homepage": "https://github.com/postor/next-persist-state#readme",
+  "homepage": "https://github.com/postor/react-persist-state#readme",
   "dependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
     "lodash.isfunction": "^3.0.9",
     "next": "^9.1.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.5.2",
-    "babel-preset-stage-2": "^6.24.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1"
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-stage-2": "^7.0.0"
   }
 }

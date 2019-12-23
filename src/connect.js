@@ -4,11 +4,12 @@ import isFunction from 'lodash.isfunction'
 export default (config = {}) => {
   const {
     maxAge = 0,
-    defaultState = {}
+    defaultState = {},
+    onUpdate = () => { }
   } = config
 
   let states = new Map(), lastUnmounts = new Map()
-  console.log({ states, lastUnmounts })
+  // console.log({ states, lastUnmounts })
 
   const connect = (Comp, key = undefined) => {
     const k = key || Comp
@@ -34,6 +35,7 @@ export default (config = {}) => {
 
       render() {
         states.set(k, this.state)  //update state when render calls
+        onUpdate(k, Comp, this.state)
 
         /**
          * 
@@ -41,7 +43,8 @@ export default (config = {}) => {
          */
         const setPersist = (obj) => {
           if (isFunction(obj)) {
-            this.setState(obj(this.state))
+            let newState = obj(this.state)
+            this.setState(newState)
             return
           }
           this.setState(obj)

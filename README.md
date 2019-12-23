@@ -1,10 +1,10 @@
-# next-persist-state
+# react-persist-state
 Persisting React state between route navigation for next.js | 即使 next.js 页面间跳转仍能使组件保持数据
 
 ## usage | 用法
 
 ```
-import persist from 'next-persist-state'
+import persist from 'react-persist-state'
 
 const connect = persist({
   defaultState: { test: '' }
@@ -28,8 +28,8 @@ when you route, `persisted` will keep | 当你切换页面，`persisted`
 ## test | 测试
 
 ```
-git clone https://github.com/postor/next-persist-state.git
-cd next-persist-state
+git clone https://github.com/postor/react-persist-state.git
+cd react-persist-state
 yarn && yarn test
 ```
 
@@ -42,10 +42,11 @@ persist
 pass in config and return `connect` | 传入配置，并返回 `connect`
 
 ```
-import persist from 'next-persist-state'
+import persist from 'react-persist-state'
 const connect = persist({
   maxAge: 0,          // timeout(miliseconds) for unmounted persist, 0 means no timeout | 超时时间（毫秒），0表示不限
   defaultState: {},   // default persisted state | 默认 state
+  onUpdate: (key, Comp, newState) => {} // use this hook if you need to know each change | 数据更新的钩子
 })
 ```
 connect 
@@ -93,3 +94,4 @@ clear cached data when you need memory efficient | 清理缓存数据
 ```
 connect.clearCache()
 ```
+
