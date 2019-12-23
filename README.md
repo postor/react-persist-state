@@ -25,12 +25,12 @@ export default connect(TestPersist)
 
 when you route, `persisted` will keep | 当你切换页面，`persisted`
 
-## test | 测试
+## example | 示例
 
 ```
 git clone https://github.com/postor/react-persist-state.git
-cd react-persist-state
-yarn && yarn test
+cd react-persist-state/examples/basic
+yarn && yarn dev
 ```
 
 open http://localhost:3000
