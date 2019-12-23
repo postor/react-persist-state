@@ -1,6 +1,8 @@
 # react-persist-state
 Persisting React state between route navigation for react SPA | 即使 SPA 页面间跳转仍能使组件保持数据
 
+quick glacne: https://www.youtube.com/watch?v=KfnBAnNu_GI&list=PLM1v95K5B1ntVsYvNJIxgRPppngrO_X4s
+
 ## usage | 用法
 
 ```
